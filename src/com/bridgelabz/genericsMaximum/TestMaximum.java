@@ -6,17 +6,55 @@ public class TestMaximum {
 	public static void main(String[] args) {
 		Maximum max = new Maximum();
 		Scanner scan = new Scanner(System.in);
-		
-		System.out.print("Enter First Value: ");
-		float first = scan.nextFloat();
-		
-		System.out.print("Enter Second Value: ");
-		float second = scan.nextFloat();
-		
-		System.out.print("Enter Third Value: ");
-		float third = scan.nextFloat();
-		
-		max.maxFloat(first,second,third);
-				
+
+		while (true) {
+			System.out.print("\n1.Integer\n2.Float\n3.String\nSelect Your Choice:");
+			int choice = scan.nextInt();
+
+			switch (choice) {
+			case 1: {
+				System.out.print("Enter First Value: ");
+				Integer first = scan.nextInt();
+
+				System.out.print("Enter Second Value: ");
+				Integer second = scan.nextInt();
+
+				System.out.print("Enter Third Value: ");
+				Integer third = scan.nextInt();
+
+				max.findMax(first, second, third);
+				break;
+			}
+			case 2: {
+				System.out.print("Enter First Value: ");
+				Float first = scan.nextFloat();
+
+				System.out.print("Enter Second Value: ");
+				Float second = scan.nextFloat();
+
+				System.out.print("Enter Third Value: ");
+				Float third = scan.nextFloat();
+
+				max.findMax(first, second, third);
+				break;
+			}
+			case 3: {
+				System.out.print("Enter First Value: ");
+				String first = scan.next();
+
+				System.out.print("Enter Second Value: ");
+				String second = scan.next();
+
+				System.out.print("Enter Third Value: ");
+				String third = scan.next();
+
+				max.findMax(first, second, third);
+				break;
+			}
+
+			default:
+				System.out.println("Enter Choice Between 1 and 3");
+			}
+		}
 	}
 }
