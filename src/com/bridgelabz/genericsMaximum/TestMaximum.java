@@ -4,11 +4,11 @@ import java.util.Scanner;
 
 public class TestMaximum {
 	public static void main(String[] args) {
-		Maximum max = new Maximum();
 		Scanner scan = new Scanner(System.in);
+		Maximum max;
 
 		while (true) {
-			System.out.print("\n1.Integer\n2.Float\n3.String\nSelect Your Choice:");
+			System.out.println("1.Integers\n2.Float\n3.String\nSelect Your Choice: ");
 			int choice = scan.nextInt();
 
 			switch (choice) {
@@ -21,8 +21,8 @@ public class TestMaximum {
 
 				System.out.print("Enter Third Value: ");
 				Integer third = scan.nextInt();
-
-				max.findMax(first, second, third);
+				max = new Maximum<Integer>(first, second, third);
+				max.findMax();
 				break;
 			}
 			case 2: {
@@ -34,8 +34,8 @@ public class TestMaximum {
 
 				System.out.print("Enter Third Value: ");
 				Float third = scan.nextFloat();
-
-				max.findMax(first, second, third);
+				max = new Maximum<Float>(first, second, third);
+				max.findMax();
 				break;
 			}
 			case 3: {
@@ -45,15 +45,14 @@ public class TestMaximum {
 				System.out.print("Enter Second Value: ");
 				String second = scan.next();
 
-				System.out.print("Enter Third Value: ");
+				System.out.print("Enter Third value ");
 				String third = scan.next();
-
-				max.findMax(first, second, third);
+				max = new Maximum<String>(first, second, third);
+				max.findMax();
 				break;
 			}
-
 			default:
-				System.out.println("Enter Choice Between 1 and 3");
+				System.out.println("Enter Choice Between 1 And 3");
 			}
 		}
 	}
